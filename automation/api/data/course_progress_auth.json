@@ -1,0 +1,26 @@
+[
+    {
+      "id": "missing_auth",
+      "authorization": null,
+      "expected_status": 403,
+      "expected_message": "User not authorized"
+    },
+    {
+      "id": "incomplete_bearer",
+      "authorization": "Bearer",
+      "expected_status": 403,
+      "expected_message": "User not authorized"
+    },
+    {
+      "id": "wrong_scheme",
+      "authorization": "Basic abc123",
+      "expected_status": 403,
+      "expected_message": "User not authorized"
+    },
+    {
+      "id": "invalid_token",
+      "authorization": "Bearer invalid-token",
+      "expected_status": 403,
+      "expected_message": "User not authorized"
+    }
+  ]
