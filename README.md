@@ -109,9 +109,14 @@ GAD-Software-Testing/
 │       └── test_users.py
 │
 ├── docs/
+|   ├─ requirements/
+│   |   └─ requirement-analysis.md
+|   ├─ test-plan/
+│   |   └─ test-plan.md
 │   └── manual-testing/
 │       ├── test-cases.md
 │       ├── bug-reports.md
+|       ├─ exploratory-session.md
 │       └── test-summary.md
 │
 ├── .gitignore
@@ -121,14 +126,18 @@ GAD-Software-Testing/
 
 ---
 
-## Manual Testing
+## Testing Documentation
 
-手工测试阶段主要覆盖 Articles 和 Users 模块。
+### Requirement & Planning
 
-已经整理的测试文档：
+- [Requirement Analysis](docs/requirements/requirement-analysis.md)
+- [Test Plan](docs/test-plan/test-plan.md)
+
+### Manual Testing
 
 - [Manual Test Cases](docs/manual-testing/test-cases.md)
 - [Bug Reports](docs/manual-testing/bug-reports.md)
+- [Exploratory Testing Session](docs/manual-testing/exploratory-session.md)
 - [Test Summary](docs/manual-testing/test-summary.md)
 
 这些文档记录了从手工功能测试、问题发现、Bug 记录到自动化回归的过程。
@@ -372,21 +381,17 @@ pytest automation/ui --browser-channel chrome --headed
 
 ## Continuous Integration
 
-项目已经接入 GitHub Actions。
+项目使用 GitHub Actions 自动执行回归测试。
 
-Workflow：
+当前包含两个 Workflow：
 
-```text
-.github/workflows/ui-tests.yml
-```
+- `API Tests`：执行 21 个 API 自动化测试
+- `UI Tests`：执行 7 个 UI 回归场景
 
-当代码 Push 到：
+当前回归基线：
 
-```text
-main
-```
-
-或向 `main` 创建 Pull Request 时，CI 会自动执行 UI 回归测试。
+- API: `21 passed`
+- UI: `6 passed, 1 xfailed`
 
 ### CI Process
 

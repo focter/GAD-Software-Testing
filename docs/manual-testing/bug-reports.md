@@ -9,6 +9,8 @@
 **模块：** Articles  
 **类型：** 状态保持 / 分页  
 **状态：** Open
+**Severity：** Minor  
+**Priority：** Medium
 
 ### 前置条件
 
@@ -62,6 +64,8 @@
 **模块：** Articles  
 **类型：** 状态保持 / 列表设置  
 **状态：** Open
+**Severity：** Minor  
+**Priority：** Medium
 
 ### 前置条件
 
@@ -121,6 +125,8 @@
 **模块：** Articles  
 **类型：** 状态保持 / 排序  
 **状态：** Open
+**Severity：** Minor  
+**Priority：** Medium
 
 ### 前置条件
 
@@ -161,11 +167,11 @@
 
 # Bug Summary
 
-| Bug ID | Description | Reproducible | Status |
-|---|---|---:|---|
-| BUG-001 | 刷新后当前分页恢复到第 1 页 | Yes | Open |
-| BUG-002 | 刷新后 Items/Page 恢复为 6 | Yes | Open |
-| BUG-003 | 刷新后 Sort 恢复默认排序 | Yes | Open |
+| Bug ID | Description | Severity | Priority | Reproducible | Status |
+|---|---|---|---|---:|---|
+| BUG-001 | 刷新后当前分页恢复到第 1 页 | Minor | Medium | Yes | Open |
+| BUG-002 | 刷新后 Items/Page 恢复为 6 | Minor | Medium | Yes | Open |
+| BUG-003 | 刷新后 Sort 恢复默认排序 | Minor | Medium | Yes | Open |
 
 三个问题具有共同现象：
 
