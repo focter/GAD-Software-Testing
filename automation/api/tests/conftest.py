@@ -1,6 +1,15 @@
+from pathlib import Path
+import sys
+
 from pytest_metadata.plugin import metadata_key
 import pytest
 import requests
+
+
+API_ROOT = Path(__file__).resolve().parent.parent
+
+if str(API_ROOT) not in sys.path:
+    sys.path.insert(0, str(API_ROOT))
 
 from config import ENVIRONMENTS
 
@@ -13,14 +22,14 @@ def pytest_configure(config):
 
     config.stash[metadata_key]["Project"] = "GAD API Automation"
     config.stash[metadata_key]["Environment"] = env
-    config.stash[metadata_key]["Base URL"] = ENVIRONMENTS[env]
+    config.stash[metadata_key]["Api Base URL"] = ENVIRONMENTS[env]
     
 def pytest_addoption(parser):
     parser.addoption(
         "--env",
         action="store",
         default="local",
-        choices=["local", "test", "staging"],
+        choices=tuple(ENVIRONMENTS),
         help="test environment: local, test, staging"
     )
 

@@ -104,7 +104,6 @@ GAD-Software-Testing/
 │   │   └── requirements.txt
 │   │
 │   └── ui/
-│       ├── browser_check.py
 │       ├── test_article_detail.py
 │       ├── test_articles.py
 │       └── test_users.py
